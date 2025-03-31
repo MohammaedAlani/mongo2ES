@@ -35,7 +35,7 @@ The application follows a clean architecture with separation of concerns:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/mongo-to-es.git
+git clone https://github.com/MohammaedAlani/mongo-to-es.git
 cd mongo-to-es
 
 cp config/config.json.example config/config.json
