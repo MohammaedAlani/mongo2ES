@@ -1,0 +1,35 @@
+# .air.toml
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# Command to build the application
+cmd = "go build -o ./tmp/app ./cmd/app"
+# Binary file path
+bin = "tmp/app"
+# Command to run the application
+full_bin = "./tmp/app -config=./config/config.json"
+# Extensions to watch for changes
+include_ext = ["go", "json", "toml"]
+# Directories to exclude
+exclude_dir = ["tmp", "vendor", ".git"]
+# Exclude file patterns
+exclude_file = []
+# Delay between builds in milliseconds
+delay = 1000
+# Stop on build errors
+stop_on_error = true
+# Send SIGINT before killing the process
+send_interrupt = true
+# Kill delay after interrupt in milliseconds
+kill_delay = 500
+
+# Custom commands
+[misc]
+# Clean tmp dir on exit
+clean_on_exit = true
+
+# Command aliases
+[command]
+# Define the "runserver" command
+runserver = "go build -o ./tmp/app ./cmd/app && ./tmp/app -config=./config/config.json"

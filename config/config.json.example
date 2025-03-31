@@ -1,0 +1,32 @@
+{
+  "MongoDB": {
+    "URI": "mongodb://username:password@localhost:27017/logs?authSource=admin",
+    "Database": "logs",
+    "Collection": "application_logs",
+    "BatchSize": 1000,
+    "QueryTimeout": "60s",
+    "DataRetentionPeriod": "720h",
+    "RemoveProcessedDocs": false,
+    "ConnectionPoolSize": 100,
+    "ReconnectionAttempts": 5
+  },
+  "Elasticsearch": {
+    "URLs": ["http://localhost:9200"],
+    "IndexName": "application-logs-%{+yyyy.MM.dd}",
+    "Username": "elastic",
+    "Password": "password",
+    "BulkSize": 1000,
+    "RetryBackoff": "1s",
+    "MaxRetries": 3,
+    "IndexRefreshInterval": "30s"
+  },
+  "App": {
+    "WorkerCount": 10,
+    "QueueSize": 100000,
+    "ProcessingInterval": "5m",
+    "LogPath": "./logs/app.log",
+    "MetricsPort": 9090,
+    "HealthCheckPort": 8080,
+    "ShutdownTimeout": "30s"
+  }
+}
